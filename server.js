@@ -50,9 +50,16 @@ app.get("/add", function(req, res) {
   res.sendFile(path.join(__dirname, "add.html"));
 });
 
+app.get("/characters", function(req, res) {
+  res.sendFile(path.join(__dirname, "characters.html"));
+});
+
+
 // Displays all characters
 app.get("/api/characters", function(req, res) {
-  return res.json(characters);
+  
+  return res.json(characters.name);
+  
 });
 
 // Displays a single character, or returns false
